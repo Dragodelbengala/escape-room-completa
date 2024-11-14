@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f1f1f1;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .section {
+            margin-top: 50px;
+            padding: 40px 25px;
+            background-color: rgba(30, 30, 30, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .btn-choice {
+            background-color: #4d94ff;
+            border-color: #4d94ff;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-choice:hover {
+            background-color: #0033cc;
+            transform: scale(1.05);
+        }
+        .choice-container {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .choice-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            margin-top: 8px;
+            border: 2px solid #4d94ff;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="audio.html" style="display: none;"></iframe>
+
+<section class="section">
+    <h3>Enigma 2:  Il Codice Status Mancante</h3>
+    <p></p>la password era corretta, sei andato avanti ma una schermata nera ti frena. Un errore 404 ti porta a un file critico del server che non esiste più. L'errore menziona un link a un percorso /confidential-data e una nota criptica: "Non tutto è stato cancellato."
+    <p><strong>dopodichè ti spuntano 4 scelte...</strong> con una scritta sotto, sembra più un indovinello. Risolvilo per provare ad andare avanti.</p>
+    <p><strong>Domanda:</strong> Mi chiamano coi numeri, e non c'è dubbio, i miei codici sono spesso un arcano mistero. Quando va tutto bene, sono il "Duecento", ma se c’è un problema, divento un tormento.
+
+        A volte sono trecento, e ti mando lontano, altre volte quattrocento, e ti blocco la mano. Se mi trovi a cinquecento, è un guaio di certo, qualcosa nel server si è rotto, è scoperto.
+        
+        Chi sono?</p>
+    
+    <!-- Opzione A -->
+    <div class="choice-container">
+        <button class="btn btn-choice" onclick="checkAnswer('A')">A) URL</button>
+        <img src="https://www.bluehost.com/blog/wp-content/uploads/2023/05/parts-of-a-uniform-resource-locator-URL.png" alt="URL" class="choice-image">
+    </div>
+    
+    <!-- Opzione B -->
+    <div class="choice-container">
+        <button class="btn btn-choice" onclick="checkAnswer('B')">B) Codici di stato HTTP</button>
+        <img src="https://www.gdr-online.com/images/articoli/http-codici-di-stato.jpg" alt="Codici di stato HTTP" class="choice-image">
+    </div>
+    
+    <!-- Opzione C -->
+    <div class="choice-container">
+        <button class="btn btn-choice" onclick="checkAnswer('C')">C) Richiesta GET</button>
+        <img src="https://kinsta.com/it/wp-content/uploads/sites/2/2022/06/cos-e-una-richiesta-http.jpeg" alt="Richiesta GET" class="choice-image">
+    </div>
+    
+    <!-- Opzione D -->
+    <div class="choice-container">
+        <button class="btn btn-choice" onclick="checkAnswer('D')">D) Nessuno dei precedenti è corretto, è un trabocchetto</button>
+        <img src="https://media.istockphoto.com/id/1131230925/it/vettoriale/segni-di-spunta-icona-croce-rossa-semplice-vettore.jpg?s=612x612&w=0&k=20&c=IKXfLVEE91fJ4_thXIatkFDLjmZtOPHULAHLve_yKi0=" alt="Nessuno" class="choice-image">
+    </div>
+
+    <p id="resultEnigma2" class="mt-4"></p>
+    <a href="enigma3.html" id="nextEnigmaLink" class="btn btn-success mt-3" style="display:none;">Prosegui al prossimo enigma</a>
+    
+</section>
+
+<script>
+    // Funzione per verificare la risposta
+    function checkAnswer(answer) {
+        const correctAnswer = 'B'; // La risposta corretta
+        const result = document.getElementById("resultEnigma2");
+        const nextLink = document.getElementById("nextEnigmaLink");
+
+        if (answer === correctAnswer) {
+            result.textContent = "Corretto!";
+            result.style.color = "lime";
+            nextLink.style.display = "inline";
+        } else {
+            result.textContent = "Risposta errata. Riprova!";
+            result.style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
